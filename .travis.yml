@@ -7,4 +7,10 @@ php:
 before_script:
   - composer install
 
-script: phpunit
+script:
+  - phpunit
+  - mkdir -p build/logs
+  - php vendor/bin/phpunit -c phpunit.xml.dist
+
+after_script:
+  - php vendor/bin/coveralls
