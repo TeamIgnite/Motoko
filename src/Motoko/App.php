@@ -4,7 +4,9 @@ namespace Motoko;
 
 class App {
 
-    protected $router;
+	private $config;
+
+    private $router;
 
     public function setRouter(Router $router) {
         $this->router = $router;
@@ -12,6 +14,14 @@ class App {
 
     public function getRouter() {
         return $this->router;
+    }
+
+    public function setConfig(Config $config) {
+    	$this->config = $config;
+    }
+
+    public function getConfig() {
+    	return $this->config;
     }
 
 }
