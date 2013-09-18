@@ -10,7 +10,7 @@ class ConfigTest extends AbstractTest {
     }
 
 	public function testRegularOperations() {
-		$config = $this->app->config;
+		$config = $this->app->getConfig();
 
 		$config->set('test.item', 'test');
 
