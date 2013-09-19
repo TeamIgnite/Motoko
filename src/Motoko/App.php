@@ -28,7 +28,7 @@ class App {
      * @param Config $config
      */
     public function setConfig(Config $config) {
-    	$this->config = $config;
+        $this->config = $config;
     }
 
     /**
@@ -37,7 +37,6 @@ class App {
      * @return Config
      */
     public function getConfig() {
-    	return $this->config;
+        return $this->config;
     }
-
 }

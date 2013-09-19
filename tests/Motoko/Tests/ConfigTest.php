@@ -6,16 +6,16 @@ namespace Motoko\Tests;
 class ConfigTest extends AbstractTest {
 
     public function setUp() {
-    	parent::setUp();
+        parent::setUp();
     }
 
-	public function testRegularOperations() {
-		$config = $this->app->getConfig();
+    public function testRegularOperations() {
+        $config = $this->app->getConfig();
 
-		$config->set('test.item', 'test');
+        $config->set('test.item', 'test');
 
-		$this->assertEquals($config->get('test.item'), 'test');
-	}
+        $this->assertEquals($config->get('test.item'), 'test');
+    }
 
     public function testLoadArrayConfig() {
 
@@ -26,8 +26,6 @@ class ConfigTest extends AbstractTest {
         );
 
         $this->app->config->setFromArray($config);
-
         //$this->assertEquals('bar', $this->app->config->get('test.item'));
     }
-
 }

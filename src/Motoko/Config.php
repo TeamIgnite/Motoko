@@ -5,23 +5,23 @@ namespace Motoko;
 
 class Config {
 
-	private $items;
+    private $items;
 
-	public function set($key, $value) {
-		array_set($this->items, $key, $value);
+    public function set($key, $value) {
+        array_set($this->items, $key, $value);
 
-		return $value;
-	}
+        return $value;
+    }
 
-	public function get($key) {
-		if(!$this->exists($key)) {
-			return false;
-		}
+    public function get($key) {
+        if (!$this->exists($key)) {
+            return false;
+        }
 
         return array_get($this->items, $key);
-	}
+    }
 
-	/**
+    /**
      * Check if key exists
      *
      * @param $key
@@ -38,16 +38,11 @@ class Config {
     // loadPhp, loadYaml, loadJson
 
     public function setFromArray($array) {
-
     }
 
     public function setFromYaml($yaml) {
-
     }
 
     public function setFromJson($json) {
-
     }
-
-
 }

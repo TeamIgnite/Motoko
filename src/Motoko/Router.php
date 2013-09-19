@@ -5,6 +5,5 @@ namespace Motoko;
 
 class Router {
 
-	
 
 }

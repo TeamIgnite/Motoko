@@ -19,5 +19,4 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase {
         $this->app->setConfig(new Config());
         $this->app->setRouter(new Router());
     }
-
 }

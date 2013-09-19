@@ -1,5 +1,5 @@
 <?php
-if(!function_exists('app_path')) {
+if (!function_exists('app_path')) {
     function app_path($path = '') {
         return getcwd() . '/tests/Motoko/Tests/app/' . $path;
     }

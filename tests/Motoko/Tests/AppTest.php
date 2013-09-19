@@ -3,7 +3,6 @@
 namespace Motoko\Tests;
 
 
-use Motoko\App;
 use Motoko\Config;
 use Motoko\Router;
 
@@ -22,5 +21,4 @@ class AppTest extends AbstractTest {
 
         $this->assertSame($router, $this->app->getRouter());
     }
-
 }
