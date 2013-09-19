@@ -9,10 +9,6 @@ use Motoko\Router;
 
 class AppTest extends AbstractTest {
 
-    public function testAppInitialization() {
-
-    }
-
     public function testConfigInjection() {
         $config = new Config();
         $this->app->setConfig($config);

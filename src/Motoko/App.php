@@ -4,9 +4,15 @@ namespace Motoko;
 
 class App {
 
-	private $config;
+    /**
+     * @var Config
+     */
+    public $config;
 
-    private $router;
+    /**
+     * @var Router
+     */
+    public $router;
 
     public function setRouter(Router $router) {
         $this->router = $router;
@@ -16,10 +22,20 @@ class App {
         return $this->router;
     }
 
+    /**
+     * Set the application config class
+     *
+     * @param Config $config
+     */
     public function setConfig(Config $config) {
     	$this->config = $config;
     }
 
+    /**
+     *
+     *
+     * @return Config
+     */
     public function getConfig() {
     	return $this->config;
     }
