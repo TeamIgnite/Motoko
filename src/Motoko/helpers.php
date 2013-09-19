@@ -1,5 +1,11 @@
 <?php
 
+/**
+ *
+ * These functions were mostly stolen from Taylor Otwells Laravel Support helpers.php
+ *
+ */
+
 if ( ! function_exists('array_add'))
 {
     /**
