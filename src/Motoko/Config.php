@@ -5,7 +5,7 @@ namespace Motoko;
 
 class Config {
 
-    private $items;
+    private $items = array();
 
     public function set($key, $value) {
         array_set($this->items, $key, $value);
@@ -13,7 +13,11 @@ class Config {
         return $value;
     }
 
-    public function get($key) {
+    public function get($key = '') {
+        if(empty($key)) {
+            return $this->items;
+        }
+
         if (!$this->exists($key)) {
             return false;
         }
@@ -38,11 +42,16 @@ class Config {
     // loadPhp, loadYaml, loadJson
 
     public function setFromArray($array) {
-    }
+        $this->items = array_merge_recursive($array, $this->items);
 
-    public function setFromYaml($yaml) {
+        return $this->items;
     }
 
     public function setFromJson($json) {
+        $array = json_decode($json, true);
+
+        $this->items = array_merge_recursive($array, $this->items);
+
+        return $this->items;
     }
 }

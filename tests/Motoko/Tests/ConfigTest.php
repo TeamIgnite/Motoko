@@ -18,14 +18,24 @@ class ConfigTest extends AbstractTest {
     }
 
     public function testLoadArrayConfig() {
+        $config = $this->app->getConfig();
 
-        $config = array(
+        $array = array(
             'test' => array(
                 'item' => 'bar'
             )
         );
 
-        $this->app->config->setFromArray($config);
-        //$this->assertEquals('bar', $this->app->config->get('test.item'));
+        $config->setFromArray($array);
+        $this->assertEquals('bar', $config->get('test.item'));
+    }
+
+    public function testLoadJsonConfig() {
+        $config = $this->app->getConfig();
+
+        $json = '{"dwarfs": ["Bombur", "Balin", "Fili"]}';
+        $config->setFromJson($json);
+
+        $this->assertEquals(array('Bombur','Balin','Fili'), $config->get('dwarfs'));
     }
 }
