@@ -9,6 +9,15 @@ class ConfigTest extends AbstractTest {
         parent::setUp();
     }
 
+    public function testInvalidGets() {
+        $config = $this->app->getConfig();
+
+        $this->assertInternalType('array', $config->get());
+
+        $this->assertFalse($config->get('HooHahah'));
+    }
+
+
     public function testRegularOperations() {
         $config = $this->app->getConfig();
 
