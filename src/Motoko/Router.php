@@ -67,12 +67,16 @@ class Router {
      *
      * @param string $action
      *
-     * @return array
+     * @return array|bool
      */
     public function parseAction($action) {
         $namespace = $class = $method = null;
 
         $parsed = explode('@', $action);
+        if(!isset($parsed[1])) {
+            return false;
+        }
+
         if (strpos($parsed[0],'\\') !== false) {
             // If we have a namespace
             $namespaced = explode('\\', $parsed[0]);

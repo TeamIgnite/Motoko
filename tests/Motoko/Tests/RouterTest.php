@@ -21,6 +21,9 @@ class RouterTest extends AbstractTest {
 
         // Test namespaced controller
         $this->assertEquals(array('Test\\Namespace', 'TestController', 'testAction'), $router->parseAction('Test\\Namespace\\TestController@testAction'));
+
+        // Test a screw up
+        $this->assertFalse($router->parseAction('Jbgdbh**3hqk'));
     }
 
 }
